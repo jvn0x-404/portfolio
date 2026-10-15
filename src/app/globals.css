@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-archivo);
+  --font-mono: var(--font-jetbrains);
+
+  --color-background: #f4f4f1;
+  --color-foreground: #0a0a0a;
+  --color-muted: #6b6b66;
+  --color-surface: #ffffff;
+  --color-border: rgba(10, 10, 10, 0.08);
+  --color-accent: #3562e3;
+  --color-accent-glow: rgba(53, 98, 227, 0.4);
+
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --background: #f4f4f1;
+  --foreground: #0a0a0a;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Custom scrollbar — light, thin */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 10, 10, 0.2);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(10, 10, 10, 0.4);
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, #6ba0ff 0%, var(--color-accent) 55%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-accent {
+  box-shadow: 0 0 40px rgba(53, 98, 227, 0.35);
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgba(10, 10, 10, 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.mask-fade-b {
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+}
+
+.ring-accent {
+  box-shadow: 0 0 0 1px var(--color-accent-glow), 0 0 32px var(--color-accent-glow);
+}
+
+/* Marquee animations */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.animate-marquee-left  { animation: marquee-left  32s linear infinite; }
+.animate-marquee-right { animation: marquee-right 32s linear infinite; }
+
+/* Live clock dot pulse */
+@keyframes statusPulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%      { transform: scale(1.4); opacity: 0.6; }
+}
+
+.status-pulse {
+  animation: statusPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee-left,
+  .animate-marquee-right {
+    animation: none;
+  }
+}
