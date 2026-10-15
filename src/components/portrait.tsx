@@ -21,8 +21,8 @@ export function Portrait() {
       className="group relative z-10 h-[58vh] w-[34vw] max-w-[420px] overflow-hidden rounded-sm bg-[linear-gradient(180deg,#9aa3b2_0%,#5a6675_55%,#2c333d_100%)] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.4)]"
     >
       <Image
-        src="/images/jeevan-portrait-card.svg"
-        alt="Editorial portrait card for Jeevan Kumar"
+        src="/images/jeevan-kumar.png"
+        alt="Portrait of Jeevan Kumar"
         fill
         priority
         sizes="(max-width: 1024px) 72vw, 420px"
