@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Portrait } from "@/components/portrait";
 import { ScrambleText } from "@/components/motion/dynamic-headings";
 
-const roles = [
+const ROLES = [
   "Creative",
   "Ethical Hacker",
   "Blue Team",
@@ -163,10 +163,10 @@ export function Hero() {
         </div>
 
         <div className="relative z-10 flex flex-col gap-1">
-          <MarqueeRow text="Frontend Developer" direction="left" index={0} />
-          <MarqueeRow text="UX/UI Designer" direction="right" index={1} />
-          <MarqueeRow text="Creative" direction="left" index={2} />
-          <MarqueeRow text="Security Researcher" direction="right" index={3} />
+          <MarqueeRow text="Creative" direction="left" index={0} />
+          <MarqueeRow text="Ethical Hacker" direction="right" index={1} />
+          <MarqueeRow text="Blue Team" direction="left" index={2} />
+          <MarqueeRow text="Red Team" direction="right" index={3} />
         </div>
 
         {/* Center data readout */}
