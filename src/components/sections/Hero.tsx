@@ -5,13 +5,11 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Portrait } from "@/components/portrait";
 import { ScrambleText } from "@/components/motion/dynamic-headings";
 
-const ROLES = [
-  "Frontend Developer",
-  "UX/UI Designer",
+const roles = [
   "Creative",
-  "Security Researcher",
   "Ethical Hacker",
-  "Web Developer",
+  "Blue Team",
+  "Red Team",
 ];
 
 /** Marquee row with hover scramble + scroll-velocity skew. */
